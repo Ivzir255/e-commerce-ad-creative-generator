@@ -1,0 +1,5 @@
+outs:
+- md5: f1c7c77f8414c035cf44bc9c7e76a6e7
+  size: 4246
+  hash: md5
+  path: products.parquet

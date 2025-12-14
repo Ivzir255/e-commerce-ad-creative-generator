@@ -1,0 +1,27 @@
+[
+  {
+    "input": "Generate ad for: Wireless Bluetooth Headphones. Category: Electronics. Description: Premium noise-cancelling wireless headphones with 30-hour battery life and crystal-clear audio quality",
+    "target": "\u2728 New arrival: Wireless Bluetooth Headphones. Premium noise-cancelling wireless headphones with 30-hour battery life and crystal-clear audio quali. Limited stock!",
+    "product_id": "P001"
+  },
+  {
+    "input": "Generate ad for: Organic Cotton T-Shirt. Category: Clothing. Description: Comfortable 100% organic cotton t-shirt available in multiple colors, eco-friendly and sustainable",
+    "target": "\ud83d\udc8e Premium Clothing: Organic Cotton T-Shirt. Comfortable 100% organic cotton t-shirt available in multiple colors, eco-friendly and sustainable. Order today!",
+    "product_id": "P002"
+  },
+  {
+    "input": "Generate ad for: Smart LED Bulb. Category: Home. Description: WiFi-enabled color-changing LED bulb with voice control and energy-saving features",
+    "target": "\u2728 New arrival: Smart LED Bulb. WiFi-enabled color-changing LED bulb with voice control and energy-saving features. Limited stock!",
+    "product_id": "P003"
+  },
+  {
+    "input": "Generate ad for: Yoga Mat Premium. Category: Sports. Description: Non-slip extra thick yoga mat with carrying strap, perfect for all types of workouts",
+    "target": "\u2728 New arrival: Yoga Mat Premium. Non-slip extra thick yoga mat with carrying strap, perfect for all types of workouts. Limited stock!",
+    "product_id": "P004"
+  },
+  {
+    "input": "Generate ad for: Coffee Maker Automatic. Category: Kitchen. Description: Programmable coffee maker with thermal carafe, makes perfect coffee every time",
+    "target": "\u2728 New arrival: Coffee Maker Automatic. Programmable coffee maker with thermal carafe, makes perfect coffee every time. Limited stock!",
+    "product_id": "P005"
+  }
+]

@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# MLflow
+mlruns/
+mlflow.db
+
+# Data
+data/raw/*.csv
+data/processed/*.parquet
+*.pkl
+
+# Models
+models/checkpoints/
+*.pth
+*.pt
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+
+# Docker
+.dockerignore
+
+# Kubernetes
+kubeconfig
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Airflow
+airflow/logs/
+airflow.db
+airflow.cfg
+airflow/config/
+airflow/plugins/
+
+.venv/
+
+aws/
+mlartifacts/
+mlruns/
+awscliv2.zip
+kubectl

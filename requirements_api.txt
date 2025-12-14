@@ -1,0 +1,9 @@
+torch --index-url https://download.pytorch.org/whl/cpu
+transformers==4.46.0
+sentencepiece==0.2.0
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+pydantic==2.10.0
+prometheus-client==0.21.0
+pyyaml==6.0.2
+numpy==1.26.4

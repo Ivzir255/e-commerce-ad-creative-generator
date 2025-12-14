@@ -1,0 +1,36 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements
+COPY requirements_api.txt .
+
+# Optimize install and cleanup: Use a virtual environment (optional, but good)
+# and ensure PyTorch uses the CPU index.
+RUN pip install --upgrade pip && \
+    pip install -r requirements_api.txt && \
+    # The crucial cleanup steps: remove pip cache, Python bytecode, and unnecessary libs
+    rm -rf /root/.cache/pip /tmp/* && \
+    find /usr/local -type d -name "__pycache__" -exec rm -r {} + && \
+    find /usr/local -type f -name "*.pyc" -delete
+
+# Copy application code
+COPY src/ ./src/
+COPY models/checkpoints/final_model/ ./models/checkpoints/final_model/
+# COPY params.yaml ./params.yaml
+
+# Expose port
+EXPOSE 8000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+# Run application
+CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ad-generator-config
+  namespace: ad-generator
+data:
+  MODEL_PATH: "/app/models/final_model"
+  MLFLOW_TRACKING_URI: "http://mlflow-service:5000"
+  LOG_LEVEL: "INFO"

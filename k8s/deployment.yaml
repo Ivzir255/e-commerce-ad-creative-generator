@@ -1,0 +1,58 @@
+# k8s/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ad-generator-api
+  namespace: ad-generator
+  labels:
+    app: ad-generator
+    component: api
+spec:
+  replicas: 2  # Changed from 3
+  selector:
+    matchLabels:
+      app: ad-generator
+      component: api
+  template:
+    metadata:
+      labels:
+        app: ad-generator
+        component: api
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8000"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+      - name: api
+        image: Ivzir255/ad-generator-api:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+          name: http
+        envFrom:
+        - configMapRef:
+            name: ad-generator-config
+        resources:
+          requests:
+            memory: "512Mi"  # Changed from 2Gi
+            cpu: "250m"      # Changed from 1000m
+          limits:
+            memory: "1Gi"    # Changed from 4Gi
+            cpu: "500m"      # Changed from 2000m
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 60
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 3
